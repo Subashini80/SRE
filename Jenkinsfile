@@ -8,8 +8,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                SET PATH=%PATH%;C:\Program Files\Git\bin;
-                sh 'ls'
+                bat 'mvn test'
             }
         }
     }   
