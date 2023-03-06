@@ -8,7 +8,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                sh 'ls'
+                bat "C:\\Program Files\\apache-maven-4.0.0-alpha-4\\bin\\mvn test"
             }
         }
     }   
