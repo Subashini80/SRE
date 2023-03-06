@@ -8,7 +8,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                SET Path=%PATH%;C:\Program Files\Git\bin;
+                SET PATH=%PATH%;C:\Program Files\Git\bin;
                 sh 'ls'
             }
         }
