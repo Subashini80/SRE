@@ -1,8 +1,5 @@
 pipeline { 
     agent any
-    environment {
-        PATH = "C:/Program Files/Git/bin:${env.PATH}"
-    }
     stages{
         stage('git checkout'){
             steps{
@@ -11,7 +8,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                C:/Program Files/Git/bin/sh 'ls'
+                sh 'ls'
             }
         }
     }   
