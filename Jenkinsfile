@@ -8,7 +8,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                PowerShell('mvn test')
+                bat "mvn test"
             }
         }
     }   
