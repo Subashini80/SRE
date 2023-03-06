@@ -11,7 +11,7 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                sh 'ls'
+                C:/Program Files/Git/bin/sh 'ls'
             }
         }
     }   
