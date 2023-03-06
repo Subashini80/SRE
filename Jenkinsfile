@@ -8,8 +8,8 @@ pipeline {
         }
         stage('UNIT testing'){
             steps{
-                sh 'mvn test'
+                PowerShell('mvn test')
             }
         }
-    } 
+    }   
 }
