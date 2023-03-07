@@ -11,5 +11,10 @@ pipeline {
                 bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn test"
             }
         }
+        stage('Intregration Testing'){
+            steps{
+              bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn verify -DskipUnitTests"  
+            }
+        }
     }   
 }
