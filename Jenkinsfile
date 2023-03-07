@@ -17,8 +17,10 @@ pipeline {
             }
         }
         stage('maven build'){
-            bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn clean install"
-        }
+            steps{
+               bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn clean install"  
+            }
+            
     }   
 }
 
