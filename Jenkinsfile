@@ -21,6 +21,17 @@ pipeline {
                bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn clean install"  
             }
         }
-    }   
+        stage ('Static code analysis')
+        {
+            steps{
+                withSonarQubeEnv(credentialsId: 'sonar-api') 
+            }
+        }
+    }
 }
+
+
+        
+    
+        
 
