@@ -22,24 +22,21 @@ pipeline {
             }
         }
         stage('Static code analysis'){
-            
-            steps{
-                
+            steps{   
                 script{
-                    
                     withSonarQubeEnv(credentialsId: 'sonar-api') {
-                        
                          bat "C:\\ProgramFiles\\apache-maven-4.0.0-alpha-4\\bin\\mvn clean package"
-                    }
-                   }
-                    
+                    } 
                 }
             }
+        }
+        stage('Quality Gate Status'){
+            steps{
+                script{      
+                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+                }
+            }
+        }
     }
-}
-
-
-        
-    
-        
+}      
 
