@@ -30,10 +30,11 @@ pipeline {
                 }
             }
         }
-        stage('Quality Gate Status'){
+        stage('upload file to Nexus'){
             steps{
                 script{      
-                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
+                    nexusArtifactUploader artifacts: 
+                    [[artifactId: 'demo', classifier: '', file: 'artifact.jar', type: 'jar']], credentialsId: 'Nexus', groupId: 'maven', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Nexus-Release', version: '1.0-SNAPSHOT'  
                 }
             }
         }
