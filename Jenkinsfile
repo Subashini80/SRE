@@ -33,7 +33,7 @@ pipeline {
         stage('upload file to Nexus'){
             steps{
                 script{      
-                    nexusArtifactUploader artifacts: [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], credentialsId: 'Nexus', groupId: 'com.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Nexus-Release', version: '1.0.0'
+                   nexusArtifactUploader artifacts: [[artifactId: 'demo', classifier: '', file: 'target/demo.jar', type: 'jar']], credentialsId: 'Nexus', groupId: 'maven', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Nexus-Release', version: '1.0-SNAPSHOT'
                 }
             }
         }
